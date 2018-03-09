@@ -20,7 +20,7 @@ public class Pedido {
     private char status;
     private float desconto;
 
-    public Pedido(Cliente cliente, char status, Prato prato) {
+    public Pedido(Cliente cliente, Prato prato) {
         this.pratos = new ArrayList<>();
         this.pratos.add(prato);
         this.cliente = cliente;

@@ -10,9 +10,9 @@ public class Cliente extends Pessoa {
     private String numeroCelular;
     private int tempoCliente;
 
-    public Cliente(Date dataCadastro, String numeroCelular, String nome, String rg, String cpf, Date datanascimento) {
+    public Cliente( String numeroCelular, String nome, String rg, String cpf, Date datanascimento) {
         super(nome, rg, cpf, datanascimento);
-        this.dataCadastro = dataCadastro;
+        this.dataCadastro = new Date(System.currentTimeMillis());;
         this.numeroCelular = numeroCelular;
         this.tempoCliente = calculatempo(dataCadastro);
     }
