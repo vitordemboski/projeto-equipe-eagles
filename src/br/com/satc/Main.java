@@ -5,6 +5,12 @@
  */
 package br.com.satc;
 
+import br.com.satc.objeto.Cliente;
+import br.com.satc.objeto.Pedido;
+import br.com.satc.objeto.Prato;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 /**
  *
  * @author markson
@@ -14,8 +20,8 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) throws ParseException {
+
     }
-    
+
 }
