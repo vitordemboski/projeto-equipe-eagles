@@ -6,6 +6,7 @@
 package br.com.satc.objeto;
 
 import br.com.satc.singleton.SCliente;
+import br.com.satc.singleton.SPrato;
 import java.util.ArrayList;
 
 /**
@@ -69,10 +70,13 @@ public class Pedido {
         this.desconto = desconto;
     }
 
-    public static float calcularValorTotal() {
-        Pedido p = null;
-        float valortotal = calcularDesconto() * p.valorTotal;
-        return valortotal;
+    public float calcularValorTotal() {
+        float valorttl = 0;
+        for (Prato prato : this.pratos) {
+            valorttl += prato.getValor();
+            valorttl = calcularDesconto() * valorttl;
+        }
+        return valorttl;
     }
 
     public static float calcularDesconto() {
@@ -86,8 +90,8 @@ public class Pedido {
 
     @Override
     public String toString() {
-        return "Pratos: " + pratos + ", cliente: " + cliente
-                + ", valotTotal: " + valorTotal + ", desconto: " + desconto + '.';
+        return "Pratos: " + pratos + ", Cliente: " + cliente
+                + ", Valor Total: " + valorTotal + ", Desconto: " + desconto + '.';
     }
 
 }
