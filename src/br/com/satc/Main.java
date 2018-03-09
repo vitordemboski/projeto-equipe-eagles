@@ -23,6 +23,9 @@ public class Main {
     public static void main(String[] args) throws ParseException {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         Cliente c = new Cliente(sdf.parse("08/03/2016"), "34421324", "Otavio", "123", "321", sdf.parse("23/08/2000"));
+        Prato prato = new Prato("Arroz", "Gostoso", 20);
+
+        Pedido p = new Pedido(c, 'A', prato);
 
     }
 
