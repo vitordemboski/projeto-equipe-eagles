@@ -5,6 +5,10 @@
  */
 package br.com.satc;
 
+import br.com.satc.objeto.Cliente;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 /**
  *
  * @author markson
@@ -14,8 +18,11 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) throws ParseException {
+      SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");  
+      Cliente c = new Cliente(sdf.parse("08/03/2016"), "34421324", "Otavio", "123", "321", sdf.parse("23/08/2000"));
+      
+        System.out.println(c.toString());
     }
     
 }
