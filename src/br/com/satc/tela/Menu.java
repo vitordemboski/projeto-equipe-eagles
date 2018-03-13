@@ -160,6 +160,12 @@ public class Menu extends javax.swing.JFrame {
         } catch (ParseException ex) {
             Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
         }
+         try {
+            Cliente c2 = new Cliente("123123", "margotti", "1234", "123123", sdf.parse("19/09/1999"));
+            SCliente.getInstance().getClientes().add(c2);
+        } catch (ParseException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
          
              Prato p = new Prato("feijoada", "boa",200);

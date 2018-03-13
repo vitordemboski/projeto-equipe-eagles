@@ -45,7 +45,6 @@ int i=0;
         JDesconto = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        JNomePrato = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -113,9 +112,6 @@ int i=0;
 
         jLabel5.setText("Nome do prato:");
 
-        JNomePrato.setEnabled(false);
-        JNomePrato.setName("JNomeCli"); // NOI18N
-
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -144,10 +140,9 @@ int i=0;
                     .addComponent(jLabel3)
                     .addComponent(JValorTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(JNomePrato, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
-                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(65, 65, 65))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -160,8 +155,6 @@ int i=0;
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(JNomePrato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
@@ -196,7 +189,6 @@ int i=0;
         this.JNomeCli.setText(SPedido.getInstance().getPedidos().get(i).getCliente().getNome());
         this.JValorTotal.setText(Float.toString(SPedido.getInstance().getPedidos().get(i).getValorTotal()));
         this.JDesconto.setText(Float.toString(SPedido.getInstance().getPedidos().get(i).getDesconto2()));
-        this.JNomePrato.setText(SPedido.getInstance().getPedidos().get(i).getPratos().get(i).getNome());
     
     
         for (Prato prato : SPedido.getInstance().getPedidos().get(i).getPratos()) {
@@ -209,29 +201,35 @@ int i=0;
     }//GEN-LAST:event_BtnConsActionPerformed
 
     private void jProximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jProximoActionPerformed
-
+        jComboBox1.removeAllItems();
         i ++;
         try {
             this.JNomeCli.setText(SPedido.getInstance().getPedidos().get(i).getCliente().getNome());
         this.JValorTotal.setText(Float.toString(SPedido.getInstance().getPedidos().get(i).getValorTotal()));
-        this.JDesconto.setText(Float.toString(SPedido.getInstance().getPedidos().get(i).getDesconto2()));
-        this.JNomePrato.setText(SPedido.getInstance().getPedidos().get(i).getPratos().get(i).getNome());
+        this.JDesconto.setText(Float.toString(SPedido.getInstance().getPedidos().get(i).getDesconto2()));    
+        for (Prato prato : SPedido.getInstance().getPedidos().get(i).getPratos()) {
+          jComboBox1.addItem(prato.getNome());  
+        }
         } catch (IndexOutOfBoundsException e) {
             JOptionPane.showMessageDialog(null, "Não possuem Pedidos seguintes");
         }
+      
     }//GEN-LAST:event_jProximoActionPerformed
 
     private void jAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAnteriorActionPerformed
-
+        jComboBox1.removeAllItems();
         i --;
         try {
             this.JNomeCli.setText(SPedido.getInstance().getPedidos().get(i).getCliente().getNome());
         this.JValorTotal.setText(Float.toString(SPedido.getInstance().getPedidos().get(i).getValorTotal()));
-        this.JDesconto.setText(Float.toString(SPedido.getInstance().getPedidos().get(i).getDesconto2()));
-        this.JNomePrato.setText(SPedido.getInstance().getPedidos().get(i).getPratos().get(i).getNome());
+        this.JDesconto.setText(Float.toString(SPedido.getInstance().getPedidos().get(i).getDesconto2())); 
+        for (Prato prato : SPedido.getInstance().getPedidos().get(i).getPratos()) {
+          jComboBox1.addItem(prato.getNome()); }
         } catch (IndexOutOfBoundsException e) {
             JOptionPane.showMessageDialog(null, "Não possuem Pedidos anteriores");
         }
+          
+        
     }//GEN-LAST:event_jAnteriorActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
@@ -277,7 +275,6 @@ int i=0;
     private javax.swing.JButton BtnCons;
     private javax.swing.JTextField JDesconto;
     private javax.swing.JTextField JNomeCli;
-    private javax.swing.JTextField JNomePrato;
     private javax.swing.JTextField JValorTotal;
     private javax.swing.JButton jAnterior;
     private javax.swing.JComboBox<String> jComboBox1;
