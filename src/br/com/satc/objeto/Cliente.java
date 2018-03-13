@@ -12,7 +12,7 @@ public class Cliente extends Pessoa {
 
     public Cliente( String numeroCelular, String nome, String rg, String cpf, Date datanascimento) {
         super(nome, rg, cpf, datanascimento);
-        this.dataCadastro = new Date(System.currentTimeMillis());;
+        this.dataCadastro = new Date(System.currentTimeMillis());
         this.numeroCelular = numeroCelular;
         this.tempoCliente = calculatempo(dataCadastro);
     }
