@@ -5,6 +5,15 @@
  */
 package br.com.satc.tela;
 
+import br.com.satc.objeto.Cliente;
+import br.com.satc.objeto.Prato;
+import br.com.satc.singleton.SCliente;
+import br.com.satc.singleton.SPrato;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author SATC
@@ -28,6 +37,10 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         Cadastrocliente = new javax.swing.JButton();
+        ConsultadeCliente = new javax.swing.JButton();
+        consultarpedidos = new javax.swing.JButton();
+        CadastroPedido = new javax.swing.JButton();
+        CadastroPedido1 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -39,7 +52,35 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Consutar cliente");
+        ConsultadeCliente.setText("Consutar cliente");
+        ConsultadeCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConsultadeClienteActionPerformed(evt);
+            }
+        });
+
+        consultarpedidos.setText("consultar Pedido");
+        consultarpedidos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consultarpedidosActionPerformed(evt);
+            }
+        });
+
+        CadastroPedido.setText("cadastrar prato");
+        CadastroPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CadastroPedidoActionPerformed(evt);
+            }
+        });
+
+        CadastroPedido1.setText("Cadastro pedido");
+        CadastroPedido1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CadastroPedido1ActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("padrao");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -50,16 +91,32 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Cadastrocliente, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Cadastrocliente, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
+            .addComponent(ConsultadeCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(CadastroPedido1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(CadastroPedido, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(consultarpedidos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(Cadastrocliente, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 156, Short.MAX_VALUE))
+                .addComponent(ConsultadeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CadastroPedido1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(consultarpedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(CadastroPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
 
         pack();
@@ -68,11 +125,53 @@ public class Menu extends javax.swing.JFrame {
     private void CadastroclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastroclienteActionPerformed
         CadastroCliente c = new CadastroCliente();
         c.setVisible(true);
+          this.dispose();
     }//GEN-LAST:event_CadastroclienteActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void ConsultadeClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultadeClienteActionPerformed
          ConsultaCLiente c = new ConsultaCLiente();
          c.setVisible(true);
+           this.dispose();
+    }//GEN-LAST:event_ConsultadeClienteActionPerformed
+
+    private void consultarpedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarpedidosActionPerformed
+        IConsultarPedido conp = new IConsultarPedido();
+        conp.setVisible(true);
+          this.dispose();
+    }//GEN-LAST:event_consultarpedidosActionPerformed
+
+    private void CadastroPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastroPedidoActionPerformed
+       JCadPrato cp= new JCadPrato();
+       cp.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_CadastroPedidoActionPerformed
+
+    private void CadastroPedido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastroPedido1ActionPerformed
+        CadastroPedido cp = new CadastroPedido();
+        cp.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CadastroPedido1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            Cliente c = new Cliente("123123", "vitor", "1234", "123123", sdf.parse("19/09/1999"));
+            SCliente.getInstance().getClientes().add(c);
+        } catch (ParseException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+         
+             Prato p = new Prato("feijoada", "boa",200);
+             SPrato.getInstance().getP().add(p);
+              Prato p2 = new Prato("macarrao", "bom",140);
+             SPrato.getInstance().getP().add(p2);
+        
+             System.out.println(SPrato.getInstance().getP().get(0).getNome());
+              System.out.println(SPrato.getInstance().getP().get(1).getNome());
+        
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -111,7 +210,11 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CadastroPedido;
+    private javax.swing.JButton CadastroPedido1;
     private javax.swing.JButton Cadastrocliente;
+    private javax.swing.JButton ConsultadeCliente;
+    private javax.swing.JButton consultarpedidos;
     private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }

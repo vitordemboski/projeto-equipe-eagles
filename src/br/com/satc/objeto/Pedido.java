@@ -30,6 +30,14 @@ public class Pedido {
         this.desconto2 = mostrarDesconto();
     }
 
+    public float getDesconto2() {
+        return desconto2;
+    }
+
+    public void setDesconto2(float desconto2) {
+        this.desconto2 = desconto2;
+    }
+
     public ArrayList<Prato> getPratos() {
         return pratos;
     }

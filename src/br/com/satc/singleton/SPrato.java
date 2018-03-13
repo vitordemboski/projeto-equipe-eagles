@@ -14,19 +14,19 @@ import java.util.List;
  * @author SATC
  */
 public class SPrato {
-    
+
     private SPrato() {
     }
-    
+
     public static SPrato getInstance() {
         return SPratoHolder.INSTANCE;
     }
-    
+
     private static class SPratoHolder {
 
         private static final SPrato INSTANCE = new SPrato();
     }
-    
+
     private List<Prato> p = new ArrayList<>();
 
     public List<Prato> getP() {
@@ -36,4 +36,11 @@ public class SPrato {
     public void setP(List<Prato> p) {
         this.p = p;
     }
+
+    Prato p1 = new Prato("pirao de peixei", "deliciosamente gostoso", 300);
+    Prato p2 = new Prato("pirao de feijao", "deliciosamente gostoso", 356);
+    Prato p3 = new Prato("pirao de farofa", "deliciosamente gostoso", 345);
+    Prato p4 = new Prato("pirao ", "deliciosamente gostoso", 2);
+    
+     
 }
