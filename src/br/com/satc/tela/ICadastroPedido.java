@@ -9,6 +9,7 @@ import br.com.satc.objeto.Cliente;
 import br.com.satc.objeto.Pedido;
 import br.com.satc.singleton.SCliente;
 import br.com.satc.singleton.SPedido;
+import br.com.satc.singleton.SPrato;
 import java.text.SimpleDateFormat;
 
 /**
@@ -16,7 +17,7 @@ import java.text.SimpleDateFormat;
  * @author SATC
  */
 public class ICadastroPedido extends javax.swing.JPanel {
-
+int posicli,posiprato;
     /**
      * Creates new form ICadastroPedido
      */
@@ -140,13 +141,10 @@ public class ICadastroPedido extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCadastrarActionPerformed
-         
-        int posicli,posiprato;
-        Cliente cli = new Cliente(TOOL_TIP_TEXT_KEY, TOOL_TIP_TEXT_KEY, TOOL_TIP_TEXT_KEY, TOOL_TIP_TEXT_KEY, datanascimento);
+
         posicli = Integer.parseInt(this.JPosCli.getText());
         posiprato = Integer.parseInt(this.JPrato.getText());
-        SCliente.getInstance().getClientes().get(posicli);
-        Pedido pe = new Pedido(cli, 0, prato);
+        Pedido pe = new Pedido(SCliente.getInstance().getClientes().get(posicli),'A', SPrato.getInstance().getP().get(posiprato));
         SPedido.getInstance().getPedidos().add(pe);
     }//GEN-LAST:event_JCadastrarActionPerformed
 

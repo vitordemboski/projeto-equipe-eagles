@@ -5,6 +5,10 @@
  */
 package br.com.satc.tela;
 
+import br.com.satc.singleton.SCliente;
+import br.com.satc.singleton.SPedido;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author SATC
@@ -80,6 +84,7 @@ int i=0;
         });
 
         jProximo.setText("Próximo");
+        jProximo.setEnabled(false);
         jProximo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jProximoActionPerformed(evt);
@@ -87,6 +92,7 @@ int i=0;
         });
 
         jAnterior.setText("Anterior");
+        jAnterior.setEnabled(false);
         jAnterior.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jAnteriorActionPerformed(evt);
@@ -125,13 +131,10 @@ int i=0;
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(JNomeCli, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(JDesconto, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3)
-                            .addComponent(JValorTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel4)
+                    .addComponent(JDesconto, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
+                    .addComponent(JValorTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(JNomePrato, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -179,11 +182,11 @@ int i=0;
     private void BtnConsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnConsActionPerformed
         jProximo.setEnabled(true);
         jAnterior.setEnabled(true);
-        this.nome.setText(ClienteS.getInstance().getC().get(i).getNome());
-        this.descricao.setText(ClienteS.getInstance().getC().get(i).getDescricao());
-        this.Data.setText(Integer.toString(ClienteS.getInstance().getC().get(i).getDatanasc()));
-        this.rg.setText(Integer.toString(ClienteS.getInstance().getC().get(i).getRg()));
-        this.cpf.setText(Integer.toString(ClienteS.getInstance().getC().get(i).getCpf()));
+        this.JNomeCli.setText(SPedido.getInstance().getPedidos().get(i).getCliente().getNome());
+        this.JValorTotal.setText(Float.toString(SPedido.getInstance().getPedidos().get(i).getValorTotal()));
+        this.JDesconto.setText(Float.toString(SPedido.getInstance().getPedidos().get(i).getDesconto()));
+        this.JNomePrato.setText(SPedido.getInstance().getPedidos().get(i).getPratos().get(i).getNome());
+      
 
     }//GEN-LAST:event_BtnConsActionPerformed
 
@@ -191,11 +194,10 @@ int i=0;
 
         i ++;
         try {
-            this.nome.setText(ClienteS.getInstance().getC().get(i).getNome());
-            this.descricao.setText(ClienteS.getInstance().getC().get(i).getDescricao());
-            this.Data.setText(Integer.toString(ClienteS.getInstance().getC().get(i).getDatanasc()));
-            this.rg.setText(Integer.toString(ClienteS.getInstance().getC().get(i).getRg()));
-            this.cpf.setText(Integer.toString(ClienteS.getInstance().getC().get(i).getCpf()));
+            this.JNomeCli.setText(SPedido.getInstance().getPedidos().get(i).getCliente().getNome());
+        this.JValorTotal.setText(Float.toString(SPedido.getInstance().getPedidos().get(i).getValorTotal()));
+        this.JDesconto.setText(Float.toString(SPedido.getInstance().getPedidos().get(i).getDesconto()));
+        this.JNomePrato.setText(SPedido.getInstance().getPedidos().get(i).getPratos().get(i).getNome());
         } catch (IndexOutOfBoundsException e) {
             JOptionPane.showMessageDialog(null, "Não possuem Pedidos seguintes");
         }
@@ -205,11 +207,10 @@ int i=0;
 
         i --;
         try {
-            this.nome.setText(ClienteS.getInstance().getC().get(i).getNome());
-            this.descricao.setText(ClienteS.getInstance().getC().get(i).getDescricao());
-            this.Data.setText(Integer.toString(ClienteS.getInstance().getC().get(i).getDatanasc()));
-            this.rg.setText(Integer.toString(ClienteS.getInstance().getC().get(i).getRg()));
-            this.cpf.setText(Integer.toString(ClienteS.getInstance().getC().get(i).getCpf()));
+            this.JNomeCli.setText(SPedido.getInstance().getPedidos().get(i).getCliente().getNome());
+        this.JValorTotal.setText(Float.toString(SPedido.getInstance().getPedidos().get(i).getValorTotal()));
+        this.JDesconto.setText(Float.toString(SPedido.getInstance().getPedidos().get(i).getDesconto()));
+        this.JNomePrato.setText(SPedido.getInstance().getPedidos().get(i).getPratos().get(i).getNome());
         } catch (IndexOutOfBoundsException e) {
             JOptionPane.showMessageDialog(null, "Não possuem Pedidos anteriores");
         }

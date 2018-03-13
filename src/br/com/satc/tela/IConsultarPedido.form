@@ -157,6 +157,7 @@
     <Component class="javax.swing.JButton" name="jProximo">
       <Properties>
         <Property name="text" type="java.lang.String" value="Pr&#xf3;ximo"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jProximoActionPerformed"/>
@@ -165,6 +166,7 @@
     <Component class="javax.swing.JButton" name="jAnterior">
       <Properties>
         <Property name="text" type="java.lang.String" value="Anterior"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jAnteriorActionPerformed"/>
