@@ -5,7 +5,6 @@
  */
 package br.com.satc.objeto;
 
-import br.com.satc.singleton.SCliente;
 import java.util.ArrayList;
 
 /**
@@ -19,14 +18,16 @@ public class Pedido {
     private float valorTotal;
     private char status;
     private float desconto;
+    private float desconto2;
 
-    public Pedido(Cliente cliente, char status, Prato prato) {
+    public Pedido(Cliente cliente, Prato prato) {
         this.pratos = new ArrayList<>();
         this.pratos.add(prato);
         this.cliente = cliente;
-        this.valorTotal = valorTotal;
+        this.valorTotal = calcularValorTotal();
         this.status = 'A';
-        this.desconto = desconto;
+        this.desconto = calcularDesconto();
+        this.desconto2 = mostrarDesconto();
     }
 
     public ArrayList<Prato> getPratos() {
@@ -69,25 +70,38 @@ public class Pedido {
         this.desconto = desconto;
     }
 
-    public static float calcularValorTotal() {
-        Pedido p = null;
-        float valortotal = calcularDesconto() * p.valorTotal;
-        return valortotal;
+    public float calcularValorTotal() {
+        float valorttl = 0;
+        for (Prato prato : this.pratos) {
+            valorttl += prato.getValor();
+            valorttl = valorttl * calcularDesconto();
+        }
+        return valorttl;
     }
 
-    public static float calcularDesconto() {
-        Cliente c = null;
-        float desconto = c.getTempoCliente() * 10;
-        desconto = desconto / 100;
-        desconto = 1 - desconto;
-        return desconto;
+    public float calcularDesconto() {
+
+        this.desconto = cliente.getTempoCliente() * 10;
+        this.desconto = this.desconto / 100;
+        this.desconto = 1 - this.desconto;
+        return this.desconto;
+
+    }
+      public float mostrarDesconto() {
+
+       float valorttl = 0;
+        for (Prato prato : this.pratos) {
+            valorttl += prato.getValor();
+            desconto2 = valorttl - valorTotal;
+        }
+        return desconto2;
 
     }
 
     @Override
     public String toString() {
-        return "Pratos: " + pratos + ", cliente: " + cliente
-                + ", valotTotal: " + valorTotal + ", desconto: " + desconto + '.';
+        return " Pratos: " + this.pratos + ",\n Cliente: " + this.cliente
+                + ",\n Valor Total: " + this.valorTotal + ",\n Desconto: " + this.desconto2 + '.';
     }
 
 }

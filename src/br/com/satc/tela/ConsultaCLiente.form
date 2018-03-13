@@ -30,23 +30,23 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="labelnome" min="-2" pref="57" max="-2" attributes="0"/>
-                          <Component id="label" min="-2" pref="57" max="-2" attributes="0"/>
+                          <Component id="labelnome" alignment="1" min="-2" pref="57" max="-2" attributes="0"/>
+                          <Component id="label" alignment="1" min="-2" pref="57" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="textrg" min="-2" pref="94" max="-2" attributes="0"/>
-                          <Component id="textnome" min="-2" pref="92" max="-2" attributes="0"/>
+                          <Component id="textrg" alignment="1" min="-2" pref="94" max="-2" attributes="0"/>
+                          <Component id="textnome" alignment="1" min="-2" pref="92" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="labelnome1" min="-2" max="-2" attributes="0"/>
-                          <Component id="labelcpf" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelnome1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelcpf" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="textnumero" min="-2" pref="92" max="-2" attributes="0"/>
-                          <Component id="textcpf" min="-2" pref="92" max="-2" attributes="0"/>
+                          <Component id="textnumero" alignment="0" min="-2" pref="92" max="-2" attributes="0"/>
+                          <Component id="textcpf" alignment="0" min="-2" pref="92" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -55,7 +55,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="textdatanascimento" min="-2" pref="92" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                      <Component id="btCadastrar" min="-2" max="-2" attributes="0"/>
+                      <Component id="btbuscar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btlimpar" min="-2" pref="76" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="18" max="32767" attributes="0"/>
@@ -86,10 +86,10 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labeldata" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="textdatanascimento" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btCadastrar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btbuscar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btlimpar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="0" pref="25" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="67" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -105,25 +105,37 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" pref="216" max="-2" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="216" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="labelnome2" min="-2" pref="57" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="textposicao" min="-2" pref="92" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jButton1" alignment="1" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="28" max="32767" attributes="0"/>
-                  <Component id="jLabel1" min="-2" pref="38" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="38" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="textposicao" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelnome2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -134,12 +146,22 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="24" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Cadastro de Cliente"/>
+            <Property name="text" type="java.lang.String" value="Consultar Cliente"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="textposicao">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textposicaoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelnome2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Posi&#xe7;&#xe3;o"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Menu"/>
+            <Property name="text" type="java.lang.String" value="menu"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
@@ -182,12 +204,12 @@
     </Component>
     <Component class="javax.swing.JTextField" name="textdatanascimento">
     </Component>
-    <Component class="javax.swing.JButton" name="btCadastrar">
+    <Component class="javax.swing.JButton" name="btbuscar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Cadastrar"/>
+        <Property name="text" type="java.lang.String" value="buscar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btCadastrarActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btbuscarActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btlimpar">

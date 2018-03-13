@@ -5,22 +5,18 @@
  */
 package br.com.satc.tela;
 
-import br.com.satc.objeto.Cliente;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
  * @author SATC
  */
-public class CadastroCliente extends javax.swing.JFrame {
+public class ConsultaCLiente extends javax.swing.JFrame {
 
     /**
-     * Creates new form CadastroCliente
+     * Creates new form ConsultaCLiente
      */
-    public CadastroCliente() {
+    public ConsultaCLiente() {
         initComponents();
     }
 
@@ -35,6 +31,8 @@ public class CadastroCliente extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        textposicao = new javax.swing.JTextField();
+        labelnome2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         textnome = new javax.swing.JTextField();
         labelnome = new javax.swing.JLabel();
@@ -46,7 +44,7 @@ public class CadastroCliente extends javax.swing.JFrame {
         textcpf = new javax.swing.JTextField();
         labeldata = new javax.swing.JLabel();
         textdatanascimento = new javax.swing.JTextField();
-        btCadastrar = new javax.swing.JButton();
+        btbuscar = new javax.swing.JButton();
         btlimpar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -54,9 +52,17 @@ public class CadastroCliente extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(51, 255, 51));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setText("Cadastro de Cliente");
+        jLabel1.setText("Consultar Cliente");
 
-        jButton1.setText("Menu");
+        textposicao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textposicaoActionPerformed(evt);
+            }
+        });
+
+        labelnome2.setText("Posição");
+
+        jButton1.setText("menu");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -67,22 +73,31 @@ public class CadastroCliente extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(113, 113, 113)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1))
+                .addGap(90, 90, 90))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(labelnome2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textposicao, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14))
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textposicao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelnome2))
+                .addContainerGap())
         );
 
         labelnome.setText("Nome:");
@@ -95,10 +110,10 @@ public class CadastroCliente extends javax.swing.JFrame {
 
         labeldata.setText("Data de nascimento:");
 
-        btCadastrar.setText("Cadastrar");
-        btCadastrar.addActionListener(new java.awt.event.ActionListener() {
+        btbuscar.setText("buscar");
+        btbuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btCadastrarActionPerformed(evt);
+                btbuscarActionPerformed(evt);
             }
         });
 
@@ -140,7 +155,7 @@ public class CadastroCliente extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(textdatanascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(36, 36, 36)
-                        .addComponent(btCadastrar)
+                        .addComponent(btbuscar)
                         .addGap(18, 18, 18)
                         .addComponent(btlimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 18, Short.MAX_VALUE))))
@@ -165,45 +180,35 @@ public class CadastroCliente extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labeldata)
                     .addComponent(textdatanascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btCadastrar)
+                    .addComponent(btbuscar)
                     .addComponent(btlimpar))
-                .addGap(0, 25, Short.MAX_VALUE))
+                .addGap(0, 67, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btbuscarActionPerformed
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");  
+    textcpf.setText(br.com.satc.singleton.SCliente.getInstance().getClientes().get(Integer.parseInt(textposicao.getText())).getCpf()); 
+    textdatanascimento.setText( sdf.format(br.com.satc.singleton.SCliente.getInstance().getClientes().get(Integer.parseInt(textposicao.getText())).getDatanascimento())); 
+    textnome.setText(br.com.satc.singleton.SCliente.getInstance().getClientes().get(Integer.parseInt(textposicao.getText())).getNome()); 
+    textnumero.setText(br.com.satc.singleton.SCliente.getInstance().getClientes().get(Integer.parseInt(textposicao.getText())).getNumeroCelular()); 
+    textrg.setText(br.com.satc.singleton.SCliente.getInstance().getClientes().get(Integer.parseInt(textposicao.getText())).getRg()); 
+
+    }//GEN-LAST:event_btbuscarActionPerformed
+
     private void btlimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btlimparActionPerformed
         textcpf.setText("");  textdatanascimento.setText("");  textnome.setText("");  textnumero.setText("");  textrg.setText("");
-        
+
     }//GEN-LAST:event_btlimparActionPerformed
 
-    private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
-       SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");  
-       String numeroCelular = textnumero.getText();
-       String nome = textnome.getText();
-       String rg = textrg.getText();
-       String cpf = textcpf.getText();
-       String datanascimento = textdatanascimento.getText();
-      
-        try {
-            Cliente c = new Cliente(numeroCelular, nome, rg, cpf, sdf.parse(datanascimento));
-             br.com.satc.singleton.SCliente.getInstance().getClientes().add(c);
-        } catch (ParseException ex) {
-            Logger.getLogger(CadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        
-         textcpf.setText("");  textdatanascimento.setText("");  textnome.setText("");  textnumero.setText("");  textrg.setText("");
-        
-       
-       
-       
-      
-    }//GEN-LAST:event_btCadastrarActionPerformed
+    private void textposicaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textposicaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textposicaoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Menu m = new Menu();
+       Menu m = new Menu();
         m.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -224,26 +229,26 @@ public class CadastroCliente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConsultaCLiente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConsultaCLiente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConsultaCLiente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConsultaCLiente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastroCliente().setVisible(true);
+                new ConsultaCLiente().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btCadastrar;
+    private javax.swing.JButton btbuscar;
     private javax.swing.JButton btlimpar;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -253,10 +258,12 @@ public class CadastroCliente extends javax.swing.JFrame {
     private javax.swing.JLabel labeldata;
     private javax.swing.JLabel labelnome;
     private javax.swing.JLabel labelnome1;
+    private javax.swing.JLabel labelnome2;
     private javax.swing.JTextField textcpf;
     private javax.swing.JTextField textdatanascimento;
     private javax.swing.JTextField textnome;
     private javax.swing.JTextField textnumero;
+    private javax.swing.JTextField textposicao;
     private javax.swing.JTextField textrg;
     // End of variables declaration//GEN-END:variables
 }
