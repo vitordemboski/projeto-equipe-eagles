@@ -202,8 +202,9 @@ int i=0;
 
     private void jProximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jProximoActionPerformed
         jComboBox1.removeAllItems();
-        i ++;
+        
         try {
+            i ++;
             this.JNomeCli.setText(SPedido.getInstance().getPedidos().get(i).getCliente().getNome());
         this.JValorTotal.setText(Float.toString(SPedido.getInstance().getPedidos().get(i).getValorTotal()));
         this.JDesconto.setText(Float.toString(SPedido.getInstance().getPedidos().get(i).getDesconto2()));    
@@ -218,8 +219,9 @@ int i=0;
 
     private void jAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAnteriorActionPerformed
         jComboBox1.removeAllItems();
-        i --;
+        
         try {
+            i --;
             this.JNomeCli.setText(SPedido.getInstance().getPedidos().get(i).getCliente().getNome());
         this.JValorTotal.setText(Float.toString(SPedido.getInstance().getPedidos().get(i).getValorTotal()));
         this.JDesconto.setText(Float.toString(SPedido.getInstance().getPedidos().get(i).getDesconto2())); 
